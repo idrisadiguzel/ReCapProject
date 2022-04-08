@@ -8,5 +8,8 @@ namespace Business.Abstract
     {
         List<Car> GetAll();
 
+        List<Car> GetCarsByBrandId(int id);
+
+        public void Add(Car car);
     }
 }

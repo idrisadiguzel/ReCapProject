@@ -8,13 +8,19 @@
     <None Remove="Abstract\" />
     <None Remove="Concrete\" />
     <None Remove="Concrete\InMemory\" />
+    <None Remove="Concrete\EntitiyFramework\" />
+    <None Remove="Microsoft.EntityFrameworkCore.SqlServer" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Abstract\" />
     <Folder Include="Concrete\" />
     <Folder Include="Concrete\InMemory\" />
+    <Folder Include="Concrete\EntitiyFramework\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entities\Entities.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.11" />
   </ItemGroup>
 </Project>

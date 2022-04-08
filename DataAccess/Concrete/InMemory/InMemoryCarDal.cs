@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using DataAccess.Abstract;
 using Entities.Concrete;
 
@@ -36,16 +37,24 @@ namespace DataAccess.Concrete.InMemory
             _cars.Remove(carToDelete);
         }
 
+        public Car Get(Expression<Func<Car, bool>> filter)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Car> GetAll()
         {
             return _cars;
         }
 
-        public Car GetById(int carId)
+        public List<Car> GetAll(Expression<Func<Car, bool>> filter = null)
         {
-            Car carToGetById = _cars.SingleOrDefault(c => c.Id == carId);
+            throw new NotImplementedException();
+        }
 
-            return carToGetById;
+        public List<Car> GetById(int carId)
+        {
+            return _cars.Where(c=> c.Id == carId).ToList();
         }
 
         public void Update(Car car)
@@ -58,6 +67,7 @@ namespace DataAccess.Concrete.InMemory
             carToUpdate.DailyPrice = car.DailyPrice;
             carToUpdate.Description = car.Description;
             carToUpdate.ModelYear = car.ModelYear;
+
         }
     }
 }
